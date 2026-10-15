@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trends – MPatchMonitor</title>
+  <meta name="description" content="Twelve months of Microsoft vulnerabilities: severity, zero-days, public exploits and the most affected products.">
+  <meta name="theme-color" content="#0F1A2B">
+  <meta property="og:title" content="MPatchMonitor">
+  <meta property="og:description" content="Microsoft security updates, tracked as they change.">
+  <meta property="og:image" content="/og.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/i18n.js" defer></script>
+  <script src="/common.js" defer></script>
+  <script src="/trends.js" defer></script>
+    </head>
+<body>
+  <a data-i18n="ac576a66d4" class="skip" href="#main">Skip to content</a>
+  <header class="bar">
+    <a data-i18n-attr="aria-label:b17c3c1a8a" class="mark" href="/" aria-label="MPatchMonitor home">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="2"/><rect x="15" y="1" width="12" height="12" rx="2"/><rect x="1" y="15" width="12" height="12" rx="2"/><rect class="hot" x="15" y="15" width="12" height="12" rx="2"/></svg>
+      <span data-i18n="bfa7230950">MPatchMonitor</span>
+    </a>
+    <nav data-i18n-attr="aria-label:9bae918add" class="nav" aria-label="Sections">
+      <a data-i18n="d4b1ea5708" href="/" data-nav="/">Overview</a>
+      <a data-i18n="9927c32af9" href="/release" data-nav="/release">Patch Tuesday</a>
+      <a data-i18n="22e2bada8f" href="/kb" data-nav="/kb">Updates</a>
+      <a data-i18n="4cd95d6af4" href="/exploited" data-nav="/exploited">Exploited</a>
+      <a data-i18n="1bcbf1dcad" href="/changes" data-nav="/changes">What changed</a>
+      <a data-i18n="8d0c4224e4" href="/acn" data-nav="/acn">CSIRT Italia</a>
+      <a data-i18n="6f3cba5e5a" href="/my" data-nav="/my">My devices</a>
+      <details class="more">
+        <summary data-i18n="d47d7cb0e4">More</summary>
+        <div class="more-menu">
+          <a data-i18n="607db76072" href="/hot" data-nav="/hot">Hottest right now</a>
+          <a data-i18n="3309dd472a" href="/open-source" data-nav="/open-source">Open-source fixes</a>
+          <a data-i18n="9cfd4c3c85" href="/end-of-life" data-nav="/end-of-life">End of life</a>
+          <a data-i18n="d8e31483f5" href="/breaches" data-nav="/breaches">Data breaches</a>
+          <a data-i18n="febce2a6c8" href="/docs-tracker" data-nav="/docs-tracker">Microsoft docs tracker</a>
+          <a data-i18n="d64e46151c" href="/known-issues" data-nav="/known-issues">Windows known issues</a>
+          <a data-i18n="e856c6c6a4" href="/trends" data-nav="/trends">Trends</a>
+          <a data-i18n="19ad3146d4" href="/analysis" data-nav="/analysis">Monthly analysis</a>
+          <a data-i18n="93e29cbecd" href="/alerts" data-nav="/alerts">Free alerts</a>
+          <a data-i18n="9f67e3afe7" href="/feeds" data-nav="/feeds">Feeds and API</a>
+          <a data-i18n="9e6c9645a4" href="/method" data-nav="/method">How the ranking works</a>
+          <a data-i18n="4c4e436f9a" href="/glossary" data-nav="/glossary">Glossary</a>
+          <a data-i18n="cce5eda33f" href="/status" data-nav="/status">Service status</a>
+        </div>
+      </details>
+    </nav>
+    <div class="bar-tools">
+      <div class="search-box" role="search">
+        <input data-i18n-attr="aria-label:67310a7cb7;placeholder:9598f3263a" id="gsearch" type="search" placeholder="Search CVE, KB, product" aria-label="Search the site" autocomplete="off" spellcheck="false" aria-controls="gsearchList" aria-expanded="false">
+        <ul data-i18n-attr="aria-label:219c4a6c86" id="gsearchList" class="search-results" role="listbox" aria-label="Results" hidden></ul>
+      </div>
+      <a class="tool lang" id="lang" href="?lang=it" hreflang="it" lang="it" translate="no">IT</a>
+      <button data-i18n-attr="title:f6442df333" id="theme" class="tool" type="button" title="Switch light or dark">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18V3Z"/><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span data-i18n="f6442df333" class="sr">Switch light or dark</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="trends-page">
+    <article id="trends" aria-live="polite"><p data-i18n="ba3bbbe10d" class="hint">Loading…</p></article>
+  </main>
+
+  <footer class="foot">
+    <p data-i18n="7d0a3517ac">Data: Microsoft Security Update Guide, CISA KEV, FIRST EPSS. An independent project by <a href="https://github.com/MariSeest">Luisa Mele</a>, not affiliated with Microsoft.</p>
+    <p data-i18n="0623ed80a6">Built to resist attacks and tested with automated penetration tests. Found a vulnerability? <a href="/.well-known/security.txt">Report it responsibly</a>.</p>
+  </footer>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+</body>
+</html>
