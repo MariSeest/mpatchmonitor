@@ -1,0 +1,19 @@
+{
+  "name": "mpatchmonitor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Real-time Microsoft Patch Tuesday monitor on Cloudflare Workers",
+  "scripts": {
+    "dev": "wrangler dev --test-scheduled",
+    "dev:admin": "wrangler dev -c admin/wrangler.jsonc --port 8788",
+    "deploy": "wrangler deploy",
+    "deploy:admin": "wrangler deploy -c admin/wrangler.jsonc",
+    "db:migrate": "wrangler d1 migrations apply mpm-security --remote",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "license": "MIT"
+}
