@@ -1,0 +1,75 @@
+name: Update data
+
+on:
+  repository_dispatch:
+    types: [msrc-changed]     # sent by the Cloudflare Worker when Microsoft changes something
+  schedule:
+    - cron: "23 * * * *"      # hourly: MSRC safety net, KEV, EPSS, news
+    - cron: "7 */6 * * *"     # every 6 hours: also end of life, docs, breaches, open source, NVD
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  KV_ID: ${{ vars.KV_NAMESPACE_ID }}
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: |
+          pip install -r requirements.txt -r requirements-dev.txt
+          npm ci
+
+      - name: Unit tests
+        run: pytest -q
+
+      - name: Download previous state from KV
+        run: |
+          for key in dashboard snapshot version; do
+            npx wrangler kv key get "$key" --namespace-id "$KV_ID" --remote > "prev-$key.json" 2>/dev/null || echo '{}' > "prev-$key.json"
+          done
+          ls -l prev-*.json
+
+      - name: Build datasets
+        env:
+          TRIGGER: ${{ github.event_name }}
+          RELEASES: ${{ toJson(github.event.client_payload.releases) }}
+          SLOW: ${{ github.event_name == 'workflow_dispatch' || github.event.schedule == '7 */6 * * *' }}
+          PUBLIC_ORIGIN: ${{ vars.PUBLIC_ORIGIN }}
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          echo "Trigger: $TRIGGER $RELEASES slow=$SLOW"
+          FLAGS=""
+          if [ "$SLOW" = "true" ]; then FLAGS="--slow"; fi
+          python scripts/fetch_msrc.py --months 12 $FLAGS \
+            --previous prev-dashboard.json --previous-snapshot prev-snapshot.json --previous-version prev-version.json \
+            --out out/dashboard.json
+
+      - name: Publish changed datasets to Cloudflare KV
+        run: |
+          npx wrangler kv bulk put out/bulk.json --namespace-id "$KV_ID" --remote
+          npx wrangler kv key put version --path out/version.json --namespace-id "$KV_ID" --remote
