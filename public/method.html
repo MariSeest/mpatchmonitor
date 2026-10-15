@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How the ranking works – MPatchMonitor</title>
+  <meta name="description" content="How MPatchMonitor scores and prioritises vulnerabilities.">
+  <meta name="theme-color" content="#0F1A2B">
+  <meta property="og:title" content="MPatchMonitor">
+  <meta property="og:description" content="Microsoft security updates, tracked as they change.">
+  <meta property="og:image" content="/og.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/i18n.js" defer></script>
+  <script src="/common.js" defer></script>
+  <script src="/pages.js" defer></script>
+    </head>
+<body>
+  <a data-i18n="ac576a66d4" class="skip" href="#main">Skip to content</a>
+  <header class="bar">
+    <a data-i18n-attr="aria-label:b17c3c1a8a" class="mark" href="/" aria-label="MPatchMonitor home">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="2"/><rect x="15" y="1" width="12" height="12" rx="2"/><rect x="1" y="15" width="12" height="12" rx="2"/><rect class="hot" x="15" y="15" width="12" height="12" rx="2"/></svg>
+      <span data-i18n="bfa7230950">MPatchMonitor</span>
+    </a>
+    <nav data-i18n-attr="aria-label:9bae918add" class="nav" aria-label="Sections">
+      <a data-i18n="d4b1ea5708" href="/" data-nav="/">Overview</a>
+      <a data-i18n="9927c32af9" href="/release" data-nav="/release">Patch Tuesday</a>
+      <a data-i18n="22e2bada8f" href="/kb" data-nav="/kb">Updates</a>
+      <a data-i18n="4cd95d6af4" href="/exploited" data-nav="/exploited">Exploited</a>
+      <a data-i18n="1bcbf1dcad" href="/changes" data-nav="/changes">What changed</a>
+      <a data-i18n="8d0c4224e4" href="/acn" data-nav="/acn">CSIRT Italia</a>
+      <a data-i18n="6f3cba5e5a" href="/my" data-nav="/my">My devices</a>
+      <details class="more">
+        <summary data-i18n="d47d7cb0e4">More</summary>
+        <div class="more-menu">
+          <a data-i18n="607db76072" href="/hot" data-nav="/hot">Hottest right now</a>
+          <a data-i18n="3309dd472a" href="/open-source" data-nav="/open-source">Open-source fixes</a>
+          <a data-i18n="9cfd4c3c85" href="/end-of-life" data-nav="/end-of-life">End of life</a>
+          <a data-i18n="d8e31483f5" href="/breaches" data-nav="/breaches">Data breaches</a>
+          <a data-i18n="febce2a6c8" href="/docs-tracker" data-nav="/docs-tracker">Microsoft docs tracker</a>
+          <a data-i18n="d64e46151c" href="/known-issues" data-nav="/known-issues">Windows known issues</a>
+          <a data-i18n="e856c6c6a4" href="/trends" data-nav="/trends">Trends</a>
+          <a data-i18n="19ad3146d4" href="/analysis" data-nav="/analysis">Monthly analysis</a>
+          <a data-i18n="93e29cbecd" href="/alerts" data-nav="/alerts">Free alerts</a>
+          <a data-i18n="9f67e3afe7" href="/feeds" data-nav="/feeds">Feeds and API</a>
+          <a data-i18n="9e6c9645a4" href="/method" data-nav="/method">How the ranking works</a>
+          <a data-i18n="4c4e436f9a" href="/glossary" data-nav="/glossary">Glossary</a>
+          <a data-i18n="cce5eda33f" href="/status" data-nav="/status">Service status</a>
+        </div>
+      </details>
+    </nav>
+    <div class="bar-tools">
+      <div class="search-box" role="search">
+        <input data-i18n-attr="aria-label:67310a7cb7;placeholder:9598f3263a" id="gsearch" type="search" placeholder="Search CVE, KB, product" aria-label="Search the site" autocomplete="off" spellcheck="false" aria-controls="gsearchList" aria-expanded="false">
+        <ul data-i18n-attr="aria-label:219c4a6c86" id="gsearchList" class="search-results" role="listbox" aria-label="Results" hidden></ul>
+      </div>
+      <a class="tool lang" id="lang" href="?lang=it" hreflang="it" lang="it" translate="no">IT</a>
+      <button data-i18n-attr="title:f6442df333" id="theme" class="tool" type="button" title="Switch light or dark">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18V3Z"/><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span data-i18n="f6442df333" class="sr">Switch light or dark</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="method-page">
+    <section class="hero">
+      <h1 data-i18n="c5b5512019" class="lede small">How the ranking works.</h1>
+      <p data-i18n="486b13ac8d" class="byline">Two numbers, both transparent. The risk score orders everything by how likely it is to hurt you now. The priority turns that into a deadline you can defend in an audit.</p>
+    </section>
+    <section class="section-block" aria-labelledby="scoreTitle">
+      <h2 data-i18n="999cbbb5bf" id="scoreTitle">Risk score, 0 to 100</h2>
+      <table class="rep-table"><thead><tr><th data-i18n="1e9806e422">Signal</th><th data-i18n="77deabe238">Points</th><th data-i18n="d3ae14a50b">Why</th></tr></thead><tbody>
+        <tr><td data-i18n="c3b55eadde">Exploited in the wild (CISA KEV, or Microsoft reports exploitation)</td><td class="num">50</td><td data-i18n="d7614115af">Confirmed attacks matter more than any theoretical score.</td></tr>
+        <tr><td data-i18n="15d8c032ff">Used in ransomware campaigns</td><td class="num">15</td><td data-i18n="b4ac2df49b">The outcome is usually severe and fast.</td></tr>
+        <tr><td data-i18n="c9d7c738b0">EPSS probability of exploitation in 30 days</td><td data-i18n="8bae39490c" class="num">up to 20</td><td data-i18n="f33e641161">Linear up to 50%: predicts attacks before they are confirmed.</td></tr>
+        <tr><td data-i18n="ecf9c435a1">CVSS base score</td><td data-i18n="f6ea894740" class="num">up to 10</td><td data-i18n="420069923f">Technical severity, one point per CVSS point.</td></tr>
+        <tr><td data-i18n="56fa518e46">Public exploit code (Metasploit module, Nuclei template or proof of concept on GitHub)</td><td class="num">10</td><td data-i18n="7ebb8784ec">Ready-made code lowers the skill needed to attack.</td></tr>
+        <tr><td data-i18n="6cb44b5633">Recent activity</td><td data-i18n="560a166c74" class="num">up to 5</td><td data-i18n="427f67bd59">Full within 14 days of release or KEV listing, fading to zero at 60 days.</td></tr>
+      </tbody></table>
+      <p data-i18n="2877f40d18" class="hint">Tiers: <b>Patch now</b> from 80, <b>High</b> from 60, <b>Notable</b> from 40, <b>Track</b> below 40. The score is capped at 100. Exploitation confirmed in the last 30 days is always <b>Patch now</b>, whatever the score. An update's score is the highest score among the CVEs it fixes, plus a small boost when it fixes ten or more.</p>
+    </section>
+    <section class="section-block" aria-labelledby="prioTitle">
+      <h2 data-i18n="9254da11f9" id="prioTitle">Priority and patch-by date</h2>
+      <table class="rep-table"><tbody>
+        <tr><td><span data-i18n="fbeae7c186" class="prio p1">P1</span></td><td data-i18n="098983cdef">Exploited in the wild, in CISA KEV, Critical with CVSS ≥ 9, or EPSS ≥ 50%</td><td data-i18n="7f920bb639">7 days</td></tr>
+        <tr><td><span data-i18n="acbbb742c7" class="prio p2">P2</span></td><td data-i18n="72f4f03587">Critical, publicly disclosed, public exploit code, EPSS ≥ 10%, or Microsoft assesses exploitation as more likely</td><td data-i18n="60acc36e5d">14 days</td></tr>
+        <tr><td><span data-i18n="9f9853b3f1" class="prio p3">P3</span></td><td data-i18n="ddca9a57e6">Important</td><td data-i18n="ffd7280513">30 days</td></tr>
+        <tr><td><span data-i18n="e05184c1f5" class="prio p4">P4</span></td><td data-i18n="cd6c5f59d1">Everything else</td><td data-i18n="38825b0f64">90 days</td></tr>
+      </tbody></table>
+      <p data-i18n="b18f19fb86" class="hint">The window starts at the Microsoft release. When CISA sets an earlier deadline for a KEV entry, that deadline applies.</p>
+    </section>
+    <section class="section-block" aria-labelledby="srcTitle">
+      <h2 data-i18n="e3eaa23bf4" id="srcTitle">Sources and refresh</h2>
+      <table class="rep-table"><thead><tr><th data-i18n="0e570ca6fa">Source</th><th data-i18n="9cd881a5aa">Used for</th><th data-i18n="0efd92a335">Checked</th></tr></thead><tbody>
+        <tr><td data-i18n="4d61f68f92">Microsoft Security Update Guide (CVRF API)</td><td data-i18n="a8b8559fdd">CVEs, severity, exploitation, revisions, fixes per product, known issues, supersedence</td><td data-i18n="bee8c3d6d7">Every 5 minutes, processed on change</td></tr>
+        <tr><td data-i18n="29bb7a95dd">CISA Known Exploited Vulnerabilities</td><td data-i18n="b021c24bae">Confirmed exploitation, ransomware use, federal deadlines</td><td data-i18n="a4bac4655d">Every hour</td></tr>
+        <tr><td data-i18n="c29d83b043">FIRST EPSS</td><td data-i18n="457ae46f2e">Probability of exploitation</td><td data-i18n="a4bac4655d">Every hour</td></tr>
+        <tr><td data-i18n="d7263df5f7">NIST NVD</td><td data-i18n="5932a3332a">CVSS for non-Microsoft exploited CVEs</td><td data-i18n="b36c2611dc">Daily</td></tr>
+        <tr><td data-i18n="0cc8893229">CSIRT Italia (ACN)</td><td data-i18n="1a52977e20">Bulletins that mention Microsoft</td><td data-i18n="ce2493967d">Every 15 minutes</td></tr>
+        <tr><td data-i18n="be29971f04">endoflife.date</td><td data-i18n="dadd804867">Support end dates</td><td data-i18n="7baa20dcba">Every 6 hours</td></tr>
+        <tr><td data-i18n="1588306ad3">GitHub (Microsoft docs, Advisory Database)</td><td data-i18n="8ef0bf8dd1">Documentation changes, open-source fixed versions</td><td data-i18n="7baa20dcba">Every 6 hours</td></tr>
+        <tr><td data-i18n="0b89be34c7">Have I Been Pwned, SEC EDGAR</td><td data-i18n="729f24a5a0">Verified breaches, incident filings</td><td data-i18n="7baa20dcba">Every 6 hours</td></tr>
+        <tr><td data-i18n="0c015610c7">Metasploit, Nuclei templates, PoC-in-GitHub</td><td data-i18n="5909c9b288">Public exploit code (only CVE identifiers are read)</td><td data-i18n="b36c2611dc">Daily</td></tr>
+      </tbody></table>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p data-i18n="7d0a3517ac">Data: Microsoft Security Update Guide, CISA KEV, FIRST EPSS. An independent project by <a href="https://github.com/MariSeest">Luisa Mele</a>, not affiliated with Microsoft.</p>
+    <p data-i18n="0623ed80a6">Built to resist attacks and tested with automated penetration tests. Found a vulnerability? <a href="/.well-known/security.txt">Report it responsibly</a>.</p>
+  </footer>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+</body>
+</html>
