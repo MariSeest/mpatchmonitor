@@ -1,0 +1,37 @@
+// Copy to wrangler.jsonc and fill the REPLACE_ values (wrangler.jsonc is never published).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mpatchmonitor",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    // HTML pages and the API go through the Worker (guard, rate limit, bans);
+    // CSS, JS and fonts are served directly: free, unlimited, never rate limited.
+    "run_worker_first": ["/", "/index.html", "/cve.html", "/cve/*", "/my", "/my.html", "/changes", "/changes.html", "/report", "/report.html", "/release", "/release/*", "/release.html", "/kb", "/kb/*", "/kb.html", "/list", "/list.html", "/hot", "/exploited", "/open-source", "/end-of-life", "/breaches", "/docs-tracker", "/acn", "/alerts", "/alerts.html", "/feeds", "/feeds.html", "/method", "/method.html", "/trends", "/trends.html", "/analysis", "/analysis/*", "/analysis.html", "/glossary", "/glossary.html", "/status", "/status.html", "/offline", "/offline.html", "/embed/*", "/known-issues", "/sitemap.xml", "/robots.txt", "/og/*", "/api/*", "/feed/*", "/ics/*", "/mcp", "/tg/*"]
+  },
+  "kv_namespaces": [{ "binding": "MPM", "id": "REPLACE_KV_ID" }],
+  "d1_databases": [
+    { "binding": "DB", "database_name": "mpm-security", "database_id": "REPLACE_D1_ID", "migrations_dir": "migrations" }
+  ],
+  // namespace_id must be unique in your Cloudflare account (pick numbers your other Workers do not use)
+  "ratelimits": [
+    { "name": "RL_BURST", "namespace_id": "7101", "simple": { "limit": 25, "period": 10 } },
+    { "name": "RL_SUSTAINED", "namespace_id": "7102", "simple": { "limit": 120, "period": 60 } }
+  ],
+  "triggers": { "crons": ["*/5 * * * *"] },
+  "vars": {
+    "GITHUB_REPO": "REPLACE_GITHUB_USER/mpatchmonitor",
+    "PUBLIC_ORIGIN": "https://mpatchmonitor.REPLACE_SUBDOMAIN.workers.dev",
+    // username of the public Telegram Watch bot, without @ (leave empty until you create it)
+    "WATCH_BOT_USERNAME": "",
+    // comma-separated words that select CSIRT Italia bulletins
+    "ACN_KEYWORDS": "Microsoft",
+    // browser notifications: public key from `node tools/vapid.mjs` (the private key is the secret VAPID_PRIVATE_KEY)
+    "VAPID_PUBLIC_KEY": ""
+  },
+  "observability": { "enabled": true }
+}
