@@ -1,0 +1,15 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+node_modules/
+.wrangler/
+.dev.vars
+prev.json
+out/
+wrangler.jsonc
+admin/wrangler.jsonc
+.dev.vars*
+admin/.dev.vars*
+security/reports/
+*.local.*
+prev-snapshot.json
