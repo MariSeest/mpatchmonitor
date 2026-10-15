@@ -1,0 +1,32 @@
+# Files that may be published on GitHub (one path or wildcard per line, relative to the project folder).
+# Everything else stays on your computer. The script also refuses files that look like secrets.
+README.md
+SECURITY.md
+LICENSE
+.gitignore
+package.json
+package-lock.json
+requirements.txt
+requirements-dev.txt
+i18n/it.json
+tools/i18n.py
+tools/vapid.mjs
+wrangler.example.jsonc
+.github/workflows/update-data.yml
+.github/dependabot.yml
+docs/SECURITY-ASSESSMENT.md
+docs/screenshots/*.png
+public/*
+public/.well-known/security.txt
+public/fonts/*
+worker/*.js
+test-support/*.js
+migrations/*.sql
+scripts/*.py
+tests/*.py
+tests/*.js
+security/pentest.py
+security/dom_xss.py
+tools/publish-github.ps1
+tools/public-files.txt
+docs/sample-evidence-report.pdf
