@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feeds and API – MPatchMonitor</title>
+  <meta name="description" content="Free RSS feeds, JSON API, calendar and MCP server.">
+  <meta name="theme-color" content="#0F1A2B">
+  <meta property="og:title" content="MPatchMonitor">
+  <meta property="og:description" content="Microsoft security updates, tracked as they change.">
+  <meta property="og:image" content="/og.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/i18n.js" defer></script>
+  <script src="/common.js" defer></script>
+  <script src="/pages.js" defer></script>
+    </head>
+<body>
+  <a data-i18n="ac576a66d4" class="skip" href="#main">Skip to content</a>
+  <header class="bar">
+    <a data-i18n-attr="aria-label:b17c3c1a8a" class="mark" href="/" aria-label="MPatchMonitor home">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="2"/><rect x="15" y="1" width="12" height="12" rx="2"/><rect x="1" y="15" width="12" height="12" rx="2"/><rect class="hot" x="15" y="15" width="12" height="12" rx="2"/></svg>
+      <span data-i18n="bfa7230950">MPatchMonitor</span>
+    </a>
+    <nav data-i18n-attr="aria-label:9bae918add" class="nav" aria-label="Sections">
+      <a data-i18n="d4b1ea5708" href="/" data-nav="/">Overview</a>
+      <a data-i18n="9927c32af9" href="/release" data-nav="/release">Patch Tuesday</a>
+      <a data-i18n="22e2bada8f" href="/kb" data-nav="/kb">Updates</a>
+      <a data-i18n="4cd95d6af4" href="/exploited" data-nav="/exploited">Exploited</a>
+      <a data-i18n="1bcbf1dcad" href="/changes" data-nav="/changes">What changed</a>
+      <a data-i18n="8d0c4224e4" href="/acn" data-nav="/acn">CSIRT Italia</a>
+      <a data-i18n="6f3cba5e5a" href="/my" data-nav="/my">My devices</a>
+      <details class="more">
+        <summary data-i18n="d47d7cb0e4">More</summary>
+        <div class="more-menu">
+          <a data-i18n="607db76072" href="/hot" data-nav="/hot">Hottest right now</a>
+          <a data-i18n="3309dd472a" href="/open-source" data-nav="/open-source">Open-source fixes</a>
+          <a data-i18n="9cfd4c3c85" href="/end-of-life" data-nav="/end-of-life">End of life</a>
+          <a data-i18n="d8e31483f5" href="/breaches" data-nav="/breaches">Data breaches</a>
+          <a data-i18n="febce2a6c8" href="/docs-tracker" data-nav="/docs-tracker">Microsoft docs tracker</a>
+          <a data-i18n="d64e46151c" href="/known-issues" data-nav="/known-issues">Windows known issues</a>
+          <a data-i18n="e856c6c6a4" href="/trends" data-nav="/trends">Trends</a>
+          <a data-i18n="19ad3146d4" href="/analysis" data-nav="/analysis">Monthly analysis</a>
+          <a data-i18n="93e29cbecd" href="/alerts" data-nav="/alerts">Free alerts</a>
+          <a data-i18n="9f67e3afe7" href="/feeds" data-nav="/feeds">Feeds and API</a>
+          <a data-i18n="9e6c9645a4" href="/method" data-nav="/method">How the ranking works</a>
+          <a data-i18n="4c4e436f9a" href="/glossary" data-nav="/glossary">Glossary</a>
+          <a data-i18n="cce5eda33f" href="/status" data-nav="/status">Service status</a>
+        </div>
+      </details>
+    </nav>
+    <div class="bar-tools">
+      <div class="search-box" role="search">
+        <input data-i18n-attr="aria-label:67310a7cb7;placeholder:9598f3263a" id="gsearch" type="search" placeholder="Search CVE, KB, product" aria-label="Search the site" autocomplete="off" spellcheck="false" aria-controls="gsearchList" aria-expanded="false">
+        <ul data-i18n-attr="aria-label:219c4a6c86" id="gsearchList" class="search-results" role="listbox" aria-label="Results" hidden></ul>
+      </div>
+      <a class="tool lang" id="lang" href="?lang=it" hreflang="it" lang="it" translate="no">IT</a>
+      <button data-i18n-attr="title:f6442df333" id="theme" class="tool" type="button" title="Switch light or dark">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18V3Z"/><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span data-i18n="f6442df333" class="sr">Switch light or dark</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="feeds-page">
+    <section class="hero">
+      <h1 data-i18n="533ac7cc9f" class="lede small">Take the data with you.</h1>
+      <p data-i18n="d9a6d5d043" class="byline">Every dataset on this site is free to use, with no key and no login. Please credit MPatchMonitor and keep the credits to the original sources: Microsoft, CISA, FIRST, NIST, endoflife.date, GitHub and Have I Been Pwned.</p>
+    </section>
+    <section class="section-block" aria-labelledby="rssTitle">
+      <h2 data-i18n="80ae1450ae" id="rssTitle">RSS feeds</h2>
+      <table class="rep-table endpoints"><tbody>
+        <tr><td data-i18n="ac152e63b4">Microsoft security updates, newest 60, ranked</td><td><code data-url="/feed/microsoft-patches.xml"></code></td></tr>
+        <tr><td data-i18n="96efc1dc05">Exploited vulnerabilities, last 30 days, every vendor</td><td><code data-url="/feed/exploited-this-week.xml"></code></td></tr>
+        <tr><td data-i18n="cbfb1d3def">Exploited vulnerabilities outside Microsoft</td><td><code data-url="/feed/non-ms-kev.xml"></code></td></tr>
+        <tr><td data-i18n="4f112aa14a">What Microsoft changed in its advisories</td><td><code data-url="/feed/changes.xml"></code></td></tr>
+        <tr><td data-i18n="c92797c8ae">Patch Tuesday, one item per release</td><td><code data-url="/feed/patch-tuesday.xml"></code></td></tr>
+        <tr><td data-i18n="8e897a8656">CSIRT Italia bulletins that mention Microsoft</td><td><code data-url="/feed/acn-microsoft.xml"></code></td></tr>
+      </tbody></table>
+    </section>
+    <section class="section-block" aria-labelledby="jsonTitle">
+      <h2 data-i18n="d5070bc1aa" id="jsonTitle">JSON API</h2>
+      <p data-i18n="675b1aff5d" class="hint">Single GET, no authentication. Responses carry an ETag, so conditional requests are cheap.</p>
+      <table class="rep-table endpoints"><tbody>
+        <tr><td data-i18n="a51d97417a">Microsoft CVEs of the last 12 releases, with changes</td><td><code data-url="/api/data.json"></code></td></tr>
+        <tr><td data-i18n="921655beb3">Microsoft security updates (KB catalog)</td><td><code data-url="/api/microsoft-patches.json"></code></td></tr>
+        <tr><td data-i18n="a699df79d1">Hottest CVEs and updates, four ranked lists</td><td><code data-url="/api/hot.json"></code></td></tr>
+        <tr><td data-i18n="67f19366a9">Exploited vulnerabilities, every vendor, with EPSS and CVSS</td><td><code data-url="/api/kev.json"></code></td></tr>
+        <tr><td data-i18n="3d2827a4d5">Exploited open-source packages and fixed versions</td><td><code data-url="/api/oss.json"></code></td></tr>
+        <tr><td data-i18n="01a0760670">End-of-life dates</td><td><code data-url="/api/eol.json"></code></td></tr>
+        <tr><td data-i18n="d2759ae06f">Data breaches and SEC incident filings</td><td><code data-url="/api/breaches.json"></code></td></tr>
+        <tr><td data-i18n="ef205856f4">Microsoft security documentation changes</td><td><code data-url="/api/docs.json"></code></td></tr>
+        <tr><td data-i18n="8e897a8656">CSIRT Italia bulletins that mention Microsoft</td><td><code data-url="/api/acn.json"></code></td></tr>
+        <tr><td data-i18n="faae0df67d">Public log of alerts sent</td><td><code data-url="/api/watch-alerts.json"></code></td></tr>
+        <tr><td data-i18n="8877d7ce44">Latest Patch Tuesday in numbers</td><td><code data-url="/api/summary.json"></code></td></tr>
+        <tr><td data-i18n="59406c6e0d">Freshness of every data source</td><td><code data-url="/api/sources.json"></code></td></tr>
+      </tbody></table>
+    </section>
+    <section class="section-block" aria-labelledby="calTitle">
+      <h2 data-i18n="d5d0a30b51" id="calTitle">Calendar</h2>
+      <table class="rep-table endpoints"><tbody>
+        <tr><td data-i18n="d2f6a73cfa">Next 12 Patch Tuesdays (subscribe in Outlook, Google or Apple Calendar)</td><td><code data-url="/ics/patch-tuesday.ics"></code></td></tr>
+      </tbody></table>
+    </section>
+    <section class="section-block" aria-labelledby="mcpTitle">
+      <h2 data-i18n="6143f187a5" id="mcpTitle">For AI assistants (MCP)</h2>
+      <p data-i18n="68b6b861f0">A read-only Model Context Protocol server lets Claude, Copilot or any MCP client query this data directly: search, CVE and update details, hot lists, recent exploitation, Patch Tuesday summaries and CSIRT Italia bulletins.</p>
+      <table class="rep-table endpoints"><tbody>
+        <tr><td data-i18n="0fc931f22a">Server URL (Streamable HTTP, no authentication)</td><td><code data-url="/mcp"></code></td></tr>
+      </tbody></table>
+    </section>
+    <section class="section-block" aria-labelledby="embedTitle">
+      <h2 data-i18n="b01b07859e" id="embedTitle">Embed on your site</h2>
+      <p data-i18n="283c0d0781">A small card with the latest Patch Tuesday figures, updated automatically. It is a plain image: no script, no cookies, no tracking.</p>
+      <div class="embed-builder">
+        <div class="embed-opts">
+          <label><span data-i18n="a4fe65264e">Language</span> <select id="embedLang"><option data-i18n="432a99a172" value="it">Italiano</option><option data-i18n="ba118bf7fc" value="en">English</option></select></label>
+          <label><span data-i18n="efb52e7172">Theme</span> <select id="embedTheme"><option data-i18n="dbcd5e7bb7" value="light">Light</option><option data-i18n="60acc53f13" value="dark">Dark</option></select></label>
+        </div>
+        <p class="embed-preview"><img data-i18n-attr="alt:9927c32af9" id="embedImg" src="/embed/patch-tuesday.svg" width="400" height="140" alt="Patch Tuesday"></p>
+        <pre class="embed-code"><code id="embedCode"></code></pre>
+        <p class="actions"><button data-i18n="49a0053f3b" type="button" class="btn ghost" id="embedCopy">Copy code</button></p>
+      </div>
+    </section>
+    <section class="section-block" aria-labelledby="termsTitle">
+      <h2 data-i18n="ede5489964" id="termsTitle">Terms</h2>
+      <p data-i18n="2ff206a63a">Free for personal and commercial use. Credit: “Data from MPatchMonitor”, with a link to this page, plus the original sources. The data is provided as is, without warranty: confirm on the linked original sources before acting.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p data-i18n="7d0a3517ac">Data: Microsoft Security Update Guide, CISA KEV, FIRST EPSS. An independent project by <a href="https://github.com/MariSeest">Luisa Mele</a>, not affiliated with Microsoft.</p>
+    <p data-i18n="0623ed80a6">Built to resist attacks and tested with automated penetration tests. Found a vulnerability? <a href="/.well-known/security.txt">Report it responsibly</a>.</p>
+  </footer>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+</body>
+</html>
