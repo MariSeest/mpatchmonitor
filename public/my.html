@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My devices – MPatchMonitor</title>
+  <meta name="description" content="Find the Microsoft security updates your devices are missing, privately in your browser, and create NIS2 evidence.">
+  <meta name="theme-color" content="#0F1A2B">
+  <meta property="og:title" content="MPatchMonitor">
+  <meta property="og:description" content="Microsoft security updates, tracked as they change.">
+  <meta property="og:image" content="/og.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/i18n.js" defer></script>
+  <script src="/common.js" defer></script>
+  <script src="/match.js" defer></script>
+  <script src="/software.js" defer></script>
+  <script src="/rollout.js" defer></script>
+  <script src="/my.js" defer></script>
+</head>
+<body>
+  <a data-i18n="ac576a66d4" class="skip" href="#main">Skip to content</a>
+  <header class="bar">
+    <a data-i18n-attr="aria-label:b17c3c1a8a" class="mark" href="/" aria-label="MPatchMonitor home">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="2"/><rect x="15" y="1" width="12" height="12" rx="2"/><rect x="1" y="15" width="12" height="12" rx="2"/><rect class="hot" x="15" y="15" width="12" height="12" rx="2"/></svg>
+      <span data-i18n="bfa7230950">MPatchMonitor</span>
+    </a>
+    <nav data-i18n-attr="aria-label:9bae918add" class="nav" aria-label="Sections">
+      <a data-i18n="d4b1ea5708" href="/" data-nav="/">Overview</a>
+      <a data-i18n="9927c32af9" href="/release" data-nav="/release">Patch Tuesday</a>
+      <a data-i18n="22e2bada8f" href="/kb" data-nav="/kb">Updates</a>
+      <a data-i18n="4cd95d6af4" href="/exploited" data-nav="/exploited">Exploited</a>
+      <a data-i18n="1bcbf1dcad" href="/changes" data-nav="/changes">What changed</a>
+      <a data-i18n="8d0c4224e4" href="/acn" data-nav="/acn">CSIRT Italia</a>
+      <a data-i18n="6f3cba5e5a" href="/my" data-nav="/my">My devices</a>
+      <details class="more">
+        <summary data-i18n="d47d7cb0e4">More</summary>
+        <div class="more-menu">
+          <a data-i18n="607db76072" href="/hot" data-nav="/hot">Hottest right now</a>
+          <a data-i18n="3309dd472a" href="/open-source" data-nav="/open-source">Open-source fixes</a>
+          <a data-i18n="9cfd4c3c85" href="/end-of-life" data-nav="/end-of-life">End of life</a>
+          <a data-i18n="d8e31483f5" href="/breaches" data-nav="/breaches">Data breaches</a>
+          <a data-i18n="febce2a6c8" href="/docs-tracker" data-nav="/docs-tracker">Microsoft docs tracker</a>
+          <a data-i18n="d64e46151c" href="/known-issues" data-nav="/known-issues">Windows known issues</a>
+          <a data-i18n="e856c6c6a4" href="/trends" data-nav="/trends">Trends</a>
+          <a data-i18n="19ad3146d4" href="/analysis" data-nav="/analysis">Monthly analysis</a>
+          <a data-i18n="93e29cbecd" href="/alerts" data-nav="/alerts">Free alerts</a>
+          <a data-i18n="9f67e3afe7" href="/feeds" data-nav="/feeds">Feeds and API</a>
+          <a data-i18n="9e6c9645a4" href="/method" data-nav="/method">How the ranking works</a>
+          <a data-i18n="4c4e436f9a" href="/glossary" data-nav="/glossary">Glossary</a>
+          <a data-i18n="cce5eda33f" href="/status" data-nav="/status">Service status</a>
+        </div>
+      </details>
+    </nav>
+    <div class="bar-tools">
+      <div class="search-box" role="search">
+        <input data-i18n-attr="aria-label:67310a7cb7;placeholder:9598f3263a" id="gsearch" type="search" placeholder="Search CVE, KB, product" aria-label="Search the site" autocomplete="off" spellcheck="false" aria-controls="gsearchList" aria-expanded="false">
+        <ul data-i18n-attr="aria-label:219c4a6c86" id="gsearchList" class="search-results" role="listbox" aria-label="Results" hidden></ul>
+      </div>
+      <a class="tool lang" id="lang" href="?lang=it" hreflang="it" lang="it" translate="no">IT</a>
+      <button data-i18n-attr="title:f6442df333" id="theme" class="tool" type="button" title="Switch light or dark">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18V3Z"/><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span data-i18n="f6442df333" class="sr">Switch light or dark</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="my-page">
+    <section class="hero">
+      <h1 data-i18n="ac9327b98b" class="lede small">Which Microsoft updates are your devices missing?</h1>
+      <p data-i18n="f175efbc19" class="byline">Load an inventory of your Windows devices. It is compared with every fix Microsoft published in the last twelve months, right here in your browser: your files never leave your computer.</p>
+    </section>
+
+    <section data-i18n-attr="aria-label:f2a53cff57" class="ways" aria-label="Ways to load devices">
+      <article>
+        <h2 data-i18n="fd59d687a2">Run the collector</h2>
+        <p data-i18n="cebf18ec3a">A short, read-only PowerShell script records the Windows build, Edge and Microsoft 365 Apps versions and installed updates. It needs no admin rights and makes no network connection.</p>
+        <p class="actions"><a data-i18n="4e61771a2d" class="btn" href="/collect.ps1" download>Download collect.ps1</a> <button data-i18n="1b085b7d1b" class="textbtn" id="showScript" type="button">Read the script first</button></p>
+        <pre class="code" id="cmd">powershell -ExecutionPolicy Bypass -File .\collect.ps1 -Anonymize</pre>
+      </article>
+      <article>
+        <h2 data-i18n="8c51876701">Import from Intune or Defender</h2>
+        <p data-i18n="004081cfcc">Export your device list as CSV: in Intune from <em>Devices, All devices, Export</em>; in Defender for Endpoint from <em>Assets, Devices, Export</em>. The device name and OS version columns are enough.</p>
+      </article>
+      <article>
+        <h2 data-i18n="fa3f628be6">Try it with sample devices</h2>
+        <p data-i18n="6f647c8855">See the analysis on six fictional devices built from the current Microsoft data: some up to date, some months behind.</p>
+        <p class="actions"><button data-i18n="a857082849" class="btn ghost" id="demo" type="button">Load sample devices</button></p>
+      </article>
+    </section>
+
+    <section data-i18n-attr="aria-label:1ea1cdaa45" class="drop" id="drop" aria-label="Load inventory files">
+      <input type="file" id="files" accept=".json,.csv,.txt,.cdx,.spdx" multiple hidden>
+      <p data-i18n="b3a79c3765"><strong>Drop collector .json files, a CSV export, an SBOM (CycloneDX or SPDX) or a winget export here</strong>, or <button class="textbtn" id="pick" type="button">choose files</button>.</p>
+      <p data-i18n="15e2e3d734" class="hint">Processed only in this browser. The page's security policy blocks any connection except to this site, and the site has no endpoint that accepts data.</p>
+    </section>
+
+    <pre class="script-view" id="scriptView" hidden></pre>
+
+    <section id="results" hidden aria-live="polite">
+      <h2 class="result-lede" id="resultLede"></h2>
+      <dl class="figures" id="myFigures"></dl>
+      <div class="result-actions">
+        <a data-i18n="5dde385e0b" class="btn" href="/report" id="toReport">Create NIS2 evidence report</a>
+        <button data-i18n="91f71c14c8" class="btn ghost" id="exportDevices" type="button">Export CSV</button>
+        <label data-i18n="8396cec00e" class="check"><input type="checkbox" id="remember"> Remember these devices in this browser</label>
+        <button data-i18n="26aad07233" class="textbtn" id="clear" type="button">Clear devices</button>
+      </div>
+
+      <h2 data-i18n="4ba5121d4d" class="section-title">Devices</h2>
+      <div class="table-wrap">
+        <table id="devices">
+          <thead><tr><th data-i18n="6ba0bdeccb" scope="col">Device</th><th data-i18n="6725e7bbcd" scope="col">System</th><th data-i18n="62faf0b6ec" scope="col">Missing fixes</th><th data-i18n="4cd95d6af4" scope="col" class="num">Exploited</th><th data-i18n="569ca49f4a" scope="col">Install</th><th data-i18n="3ecf7345df" scope="col" class="num">Patch by</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <h2 data-i18n="b4d18120d6" class="section-title">Vulnerabilities open in your fleet</h2>
+      <div class="table-wrap">
+        <table id="fleetTop">
+          <thead><tr><th data-i18n="d60dbba079" scope="col">Priority</th><th data-i18n="a123dd728a" scope="col">Vulnerability</th><th data-i18n="4ba5121d4d" scope="col" class="num">Devices</th><th data-i18n="88b01c8a4b" scope="col">Signals</th><th data-i18n="3ecf7345df" scope="col" class="num">Patch by</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <h2 data-i18n="8ec230ae6f" class="section-title" id="rolloutTitle">Rollout in waves</h2>
+      <p data-i18n="3442dd8884" class="hint">A suggested plan: a small pilot group first, then the other workstations, then the servers. The dates follow the most urgent priority still missing. Move a device to another wave with its menu.</p>
+      <div class="rollout" id="rollout"></div>
+      <div class="result-actions">
+        <button data-i18n="c42f3fbafb" class="btn ghost" id="rolloutIcs" type="button">Add to calendar (ICS)</button>
+        <button data-i18n="636bf82dff" class="btn ghost" id="rolloutCsv" type="button">Export groups (CSV)</button>
+      </div>
+    </section>
+
+    <section id="software" class="software" hidden aria-labelledby="swTitle">
+      <h2 data-i18n="cf81434302" class="result-lede" id="swTitle">My software</h2>
+      <p data-i18n="0859d9036e" class="hint">Third-party programs and SBOM components, checked in this browser against end-of-life dates, vulnerabilities exploited in the wild (CISA KEV) and exploited open-source packages.</p>
+      <dl class="figures" id="swFigures"></dl>
+      <div class="result-actions"><button data-i18n="91f71c14c8" class="btn ghost" id="exportSoftware" type="button">Export CSV</button></div>
+      <h3 data-i18n="b6747064b2" class="section-title" id="swProgTitle">Programs</h3>
+      <div class="table-wrap" id="swProgWrap">
+        <table id="swPrograms">
+          <thead><tr><th data-i18n="90920d93e2" scope="col">Program</th><th data-i18n="dd167905de" scope="col">Version</th><th data-i18n="4ba5121d4d" scope="col" class="num">Devices</th><th data-i18n="be91940b79" scope="col">Support</th><th data-i18n="59444ef11f" scope="col">Exploited vulnerabilities for this product</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <h3 data-i18n="27d730d2c6" class="section-title" id="swCompTitle">SBOM components with exploited vulnerabilities</h3>
+      <div class="table-wrap" id="swCompWrap">
+        <table id="swComponents">
+          <thead><tr><th data-i18n="ce54f0e22d" scope="col">Component</th><th data-i18n="dd167905de" scope="col">Version</th><th data-i18n="a123dd728a" scope="col">Vulnerability</th><th data-i18n="eda6a08a2f" scope="col">Fixed in</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p data-i18n="f4340bc34e" class="hint">Matches by product name are indicative: check your version on the linked source. For SBOM components only vulnerabilities already exploited are checked.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p data-i18n="7d0a3517ac">Data: Microsoft Security Update Guide, CISA KEV, FIRST EPSS. An independent project by <a href="https://github.com/MariSeest">Luisa Mele</a>, not affiliated with Microsoft.</p>
+    <p data-i18n="0623ed80a6">Built to resist attacks and tested with automated penetration tests. Found a vulnerability? <a href="/.well-known/security.txt">Report it responsibly</a>.</p>
+  </footer>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+</body>
+</html>
