@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MPatchMonitor</title>
+  <meta name="description" content="Microsoft security updates, tracked as they change: new CVEs, revisions, exploitation and a remediation queue prioritised for NIS2.">
+  <meta name="theme-color" content="#0F1A2B">
+  <meta property="og:title" content="MPatchMonitor">
+  <meta property="og:description" content="Microsoft security updates, tracked as they change.">
+  <meta property="og:image" content="/og.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/i18n.js" defer></script>
+  <script src="/common.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a data-i18n="ac576a66d4" class="skip" href="#main">Skip to content</a>
+  <header class="bar">
+    <a data-i18n-attr="aria-label:b17c3c1a8a" class="mark" href="/" aria-label="MPatchMonitor home">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="2"/><rect x="15" y="1" width="12" height="12" rx="2"/><rect x="1" y="15" width="12" height="12" rx="2"/><rect class="hot" x="15" y="15" width="12" height="12" rx="2"/></svg>
+      <span data-i18n="bfa7230950">MPatchMonitor</span>
+    </a>
+    <nav data-i18n-attr="aria-label:9bae918add" class="nav" aria-label="Sections">
+      <a data-i18n="d4b1ea5708" href="/" data-nav="/">Overview</a>
+      <a data-i18n="9927c32af9" href="/release" data-nav="/release">Patch Tuesday</a>
+      <a data-i18n="22e2bada8f" href="/kb" data-nav="/kb">Updates</a>
+      <a data-i18n="4cd95d6af4" href="/exploited" data-nav="/exploited">Exploited</a>
+      <a data-i18n="1bcbf1dcad" href="/changes" data-nav="/changes">What changed</a>
+      <a data-i18n="8d0c4224e4" href="/acn" data-nav="/acn">CSIRT Italia</a>
+      <a data-i18n="6f3cba5e5a" href="/my" data-nav="/my">My devices</a>
+      <details class="more">
+        <summary data-i18n="d47d7cb0e4">More</summary>
+        <div class="more-menu">
+          <a data-i18n="607db76072" href="/hot" data-nav="/hot">Hottest right now</a>
+          <a data-i18n="3309dd472a" href="/open-source" data-nav="/open-source">Open-source fixes</a>
+          <a data-i18n="9cfd4c3c85" href="/end-of-life" data-nav="/end-of-life">End of life</a>
+          <a data-i18n="d8e31483f5" href="/breaches" data-nav="/breaches">Data breaches</a>
+          <a data-i18n="febce2a6c8" href="/docs-tracker" data-nav="/docs-tracker">Microsoft docs tracker</a>
+          <a data-i18n="d64e46151c" href="/known-issues" data-nav="/known-issues">Windows known issues</a>
+          <a data-i18n="e856c6c6a4" href="/trends" data-nav="/trends">Trends</a>
+          <a data-i18n="19ad3146d4" href="/analysis" data-nav="/analysis">Monthly analysis</a>
+          <a data-i18n="93e29cbecd" href="/alerts" data-nav="/alerts">Free alerts</a>
+          <a data-i18n="9f67e3afe7" href="/feeds" data-nav="/feeds">Feeds and API</a>
+          <a data-i18n="9e6c9645a4" href="/method" data-nav="/method">How the ranking works</a>
+          <a data-i18n="4c4e436f9a" href="/glossary" data-nav="/glossary">Glossary</a>
+          <a data-i18n="cce5eda33f" href="/status" data-nav="/status">Service status</a>
+        </div>
+      </details>
+    </nav>
+    <div class="bar-tools">
+      <p class="live" id="live" role="status" aria-live="polite"><span class="pulse" aria-hidden="true"></span><span data-i18n="ded9d88ce5" id="liveText">Connecting to Microsoft</span></p>
+      <button data-i18n-attr="title:e665863665" id="bell" class="tool" type="button" aria-pressed="false" title="Desktop alerts">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0-6 6v3.6L4.3 15.4A1 1 0 0 0 5.2 17h13.6a1 1 0 0 0 .9-1.6L18 12.6V9a6 6 0 0 0-6-6Zm0 18a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 21Z"/></svg>
+        <span data-i18n="e665863665" class="sr">Desktop alerts</span>
+      </button>
+      <div class="search-box" role="search">
+        <input data-i18n-attr="aria-label:67310a7cb7;placeholder:9598f3263a" id="gsearch" type="search" placeholder="Search CVE, KB, product" aria-label="Search the site" autocomplete="off" spellcheck="false" aria-controls="gsearchList" aria-expanded="false">
+        <ul data-i18n-attr="aria-label:219c4a6c86" id="gsearchList" class="search-results" role="listbox" aria-label="Results" hidden></ul>
+      </div>
+      <a class="tool lang" id="lang" href="?lang=it" hreflang="it" lang="it" translate="no">IT</a>
+      <button data-i18n-attr="title:f6442df333" id="theme" class="tool" type="button" title="Switch light or dark">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18V3Z"/><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span data-i18n="f6442df333" class="sr">Switch light or dark</span>
+      </button>
+    </div>
+  </header>
+
+  <p class="notice pending" id="pending" hidden><span class="spin" aria-hidden="true"></span><span id="pendingText"></span></p>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="lede">
+      <h1 data-i18n="654a48ee10" class="lede" id="lede">Reading Microsoft's latest security release…</h1>
+      <p class="byline" id="byline"></p>
+      <div data-i18n-attr="aria-label:9fb6c29f7b" class="ribbon" id="ribbon" role="group" aria-label="Choose a Patch Tuesday release"></div>
+      <dl class="figures" id="figures"></dl>
+    </section>
+
+    <div class="split">
+      <section class="panel wire" id="wire" aria-labelledby="wireTitle">
+        <div class="panel-head">
+          <h2 data-i18n="7f4b7d4556" id="wireTitle">Changes from Microsoft</h2>
+          <button data-i18n="d7592650e1" class="textbtn" id="markRead" type="button">Mark all as read</button>
+        </div>
+        <p class="unread-line" id="unreadLine" hidden></p>
+        <div data-i18n-attr="aria-label:1da2506b6f" class="filters-row" id="chips" role="group" aria-label="Show changes of type"></div>
+        <ol class="feed" id="feed"></ol>
+      </section>
+
+      <section class="fixed" aria-labelledby="fixedTitle">
+        <h2 data-i18n="5bed3ffaf8" id="fixedTitle">What the release fixes</h2>
+        <div class="bars-grid">
+          <div>
+            <h3 data-i18n="c2c418dd34">Type of impact</h3>
+            <ul class="hbars" id="impact"></ul>
+          </div>
+          <div>
+            <h3 data-i18n="1fc9bb8119">Most affected products</h3>
+            <ul class="hbars" id="family"></ul>
+          </div>
+        </div>
+        <div class="acn-strip" id="acnStrip" hidden>
+          <h3><a data-i18n="578c07dbad" href="/acn">Latest from CSIRT Italia</a></h3>
+          <ul class="plain" id="acnList"></ul>
+        </div>
+        <ul data-i18n-attr="aria-label:a8aa078b7e" class="quick" aria-label="Go to">
+          <li><a data-i18n="607db76072" href="/hot">Hottest right now</a></li>
+          <li><a data-i18n="3f962b4a85" href="/exploited">Exploited this month, every vendor</a></li>
+          <li><a data-i18n="de67e82b67" href="/kb">Find a KB</a></li>
+          <li><a data-i18n="8cca4b298b" href="/end-of-life">End of support</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="queue" id="queue" aria-labelledby="queueTitle">
+      <div class="queue-head">
+        <div>
+          <h2 data-i18n="1f427a6e29" id="queueTitle">Remediation queue</h2>
+          <p class="hint" id="count"></p>
+        </div>
+        <button data-i18n="91f71c14c8" id="csv" class="btn" type="button">Export CSV</button>
+      </div>
+      <div class="controls">
+        <input data-i18n-attr="aria-label:49c266baaa;placeholder:4f9699f532" id="q" type="search" placeholder="Search by CVE, product or impact" aria-label="Search">
+        <select data-i18n-attr="aria-label:5e9f98120d" id="sev" aria-label="Severity">
+          <option data-i18n="626a7548f3" value="">Any severity</option>
+          <option data-i18n="427dd2969b">Critical</option><option data-i18n="ddca9a57e6">Important</option><option data-i18n="5c42afc7a2">Moderate</option><option data-i18n="f793de205e">Low</option>
+        </select>
+        <select data-i18n-attr="aria-label:d60dbba079" id="prio" aria-label="Priority">
+          <option data-i18n="b335572e92" value="">Any priority</option>
+          <option data-i18n="bc0c5c3a09" value="P1">P1, within 7 days</option><option data-i18n="55dc5078b4" value="P2">P2, within 14 days</option>
+          <option data-i18n="d115a5be1d" value="P3">P3, within 30 days</option><option data-i18n="da9706076b" value="P4">P4, within 90 days</option>
+        </select>
+        <label data-i18n="d86719845c" class="check"><input type="checkbox" id="onlyChanged"> Revised recently</label>
+        <label data-i18n="5b7f89d87e" class="check"><input type="checkbox" id="onlyExploited"> Exploited</label>
+        <label data-i18n="0d009bc15b" class="check"><input type="checkbox" id="onlyKev"> In CISA KEV</label>
+        <label data-i18n="f9b2bba4f0" class="check"><input type="checkbox" id="onlyPublic"> Public exploit</label>
+        <label data-i18n="68fa9f40fb" class="check"><input type="checkbox" id="onlyMitigation"> Has a mitigation</label>
+      </div>
+      <div class="table-wrap">
+        <table id="table">
+          <thead>
+            <tr>
+              <th data-i18n="d60dbba079" scope="col" data-k="priority">Priority</th>
+              <th data-i18n="a123dd728a" scope="col" data-k="cve">Vulnerability</th>
+              <th data-i18n="fb9ef89417" scope="col" data-k="family">Product</th>
+              <th data-i18n="5a526ee965" scope="col" data-k="cvss" class="num">CVSS</th>
+              <th data-i18n="dcccadfa39" scope="col" data-k="epss" class="num">EPSS</th>
+              <th data-i18n="88b01c8a4b" scope="col" data-k="revised_at">Signals</th>
+              <th data-i18n="3ecf7345df" scope="col" data-k="due" class="num">Patch by</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="about" aria-labelledby="aboutTitle">
+      <h2 data-i18n="9c870aa6e5" id="aboutTitle">How it works</h2>
+      <div class="about-cols">
+        <div>
+          <h3 data-i18n="4ec2bf1063">Watching Microsoft</h3>
+          <p data-i18n="9a2fabe283">Every five minutes the site checks the Microsoft Security Update Guide. When Microsoft publishes or revises a bulletin, a pipeline re-reads the release, compares it with the previous one and records what changed. Open pages update by themselves.</p>
+        </div>
+        <div>
+          <h3 data-i18n="4207685640">Deciding what to patch first</h3>
+          <p data-i18n="bbb7924278">Each CVE gets a priority from Microsoft's severity, the CVSS score, evidence of exploitation, the CISA Known Exploited Vulnerabilities catalog and the FIRST EPSS probability. The priority sets a patch-by date.</p>
+          <p id="sla" class="hint"></p>
+        </div>
+        <div>
+          <h3 data-i18n="3e4e9fdc09">Why it matters for NIS2</h3>
+          <p data-i18n="70f794635e">Article 21(2)(e) of the NIS2 Directive, transposed in Italy by Legislative Decree 138/2024, asks for a documented, risk-based approach to vulnerability handling. The exported queue is evidence of that process.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p id="updated"></p>
+    <p data-i18n="7d0a3517ac">Data: Microsoft Security Update Guide, CISA KEV, FIRST EPSS. An independent project by <a href="https://github.com/MariSeest">Luisa Mele</a>, not affiliated with Microsoft.</p>
+    <p data-i18n="0623ed80a6">Built to resist attacks and tested with automated penetration tests. Found a vulnerability? <a href="/.well-known/security.txt">Report it responsibly</a>.</p>
+  </footer>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+</body>
+</html>
