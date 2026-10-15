@@ -1,0 +1,4 @@
+Contact: https://github.com/MariSeest/mpatchmonitor/security/advisories/new
+Policy: https://github.com/MariSeest/mpatchmonitor/blob/main/SECURITY.md
+Preferred-Languages: en, it
+Expires: 2027-10-14T00:00:00.000Z
