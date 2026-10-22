@@ -1,5 +1,5 @@
 requests>=2.31
-defusedxml>=0.7
+defusedxml>=0.7.1
 beautifulsoup4>=4.12
 pillow>=10.0
 fonttools>=4.50
