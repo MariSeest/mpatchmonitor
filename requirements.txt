@@ -1,6 +1,6 @@
 requests>=2.31
 defusedxml>=0.7
 beautifulsoup4>=4.12
-pillow>=10.0
+pillow>=13.0.0
 fonttools>=4.50
 brotli>=1.1
